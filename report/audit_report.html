@@ -1,0 +1,72 @@
+
+    <html>
+    <head>
+        <title>Linux Hardening Audit Report</title>
+        <style>
+            body { background:#0f172a; color:#e5e7eb; font-family:Arial }
+            h1 { color:#38bdf8 }
+            table { width:100%; border-collapse:collapse; margin-top:20px }
+            th, td { padding:10px; border:1px solid #334155 }
+            th { background:#1e293b }
+            .Low { color:#22c55e }
+            .Medium { color:#facc15 }
+            .High { color:#ef4444 }
+        </style>
+    </head>
+    <body>
+        <h1>Linux Hardening Audit Report</h1>
+        <p>Generated on: 2025-12-30 12:45:51.179075</p>
+        <h2>Overall Risk: <span style="color:#facc15">MEDIUM</span> (Score: 5)</h2>
+        <table>
+            <tr>
+                <th>Check</th>
+                <th>Status</th>
+                <th>Risk</th>
+                <th>Score</th>
+                <th>Auto Fix</th>
+            </tr>
+    
+            <tr>
+                <td>SSH Hardening</td>
+                <td>PASS</td>
+                <td class="Low">Low</td>
+                <td>0</td>
+                <td>Yes</td>
+            </tr>
+        
+            <tr>
+                <td>Firewall Configuration</td>
+                <td>PASS</td>
+                <td class="Low">Low</td>
+                <td>0</td>
+                <td>Yes</td>
+            </tr>
+        
+            <tr>
+                <td>Critical File Permissions</td>
+                <td>PASS</td>
+                <td class="Low">Low</td>
+                <td>0</td>
+                <td>Manual</td>
+            </tr>
+        
+            <tr>
+                <td>ASLR Protection</td>
+                <td>PASS</td>
+                <td class="Low">Low</td>
+                <td>0</td>
+                <td>Manual</td>
+            </tr>
+        
+            <tr>
+                <td>Password Policy</td>
+                <td>FAIL (Manual Fix Required)</td>
+                <td class="High">High</td>
+                <td>5</td>
+                <td>Manual</td>
+            </tr>
+        
+        </table>
+    </body>
+    </html>
+    
