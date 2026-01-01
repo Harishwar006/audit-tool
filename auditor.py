@@ -69,5 +69,40 @@ def print_tool_report(results):
     print(f"TOTAL RISK SCORE: {total}")
     print("=======================================\n")
 add_result("Password Policy", audit_password_policy(), False)
+def print_terminal_output(results, score_before, score_after):
+    total_checks = len(results)
+    failed = sum(1 for r in results if r["status"] == "FAIL")
+    passed = total_checks - failed
+    fixed = sum(1 for r in results if r.get("fixed") is True)
+
+    print("\n" + "=" * 50)
+    print("        LINUX HARDENING AUDIT TOOL")
+    print("=" * 50)
+
+    print("\n[+] Audit completed")
+    print(f"[+] Total checks      : {total_checks}")
+    print(f"[+] Passed checks     : {passed}")
+    print(f"[+] Failed checks     : {failed}")
+    print(f"[+] Hardening score   : {score_before}/100")
+
+    print("\n[+] Auto-fix execution summary")
+    print(f"[+] Safe fixes applied: {fixed}")
+    print("[!] Critical issues   : Manual fix required")
+
+    print("\n[+] Report generation")
+    print("[+] HTML report saved : report/audit_report.html")
+    print("[+] PDF report saved  : report/audit_report.pdf")
+
+    print(f"\n[+] Final score       : {score_after}/100")
+    print("[+] Audit process completed successfully")
+    print("=" * 50 + "\n")
+# run checks → fill results list
+score_before = 100 - sum(r["score"] for r in results)
+
+# apply safe fixes here (if any)
+score_after = 100 - sum(r["score"] for r in results if not r.get("fixed"))
+
 generate_html_report(results)
 generate_pdf_report(results)
+
+print_terminal_output(results, score_before, score_after)
