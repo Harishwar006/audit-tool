@@ -39,6 +39,10 @@ Linux OS (Kali / Ubuntu / Debian recommended)
 Root privileges (for some checks)
 
 ---
+ 
+ Run
+  
+    cd audit-tool  
 
 🐍 Python Virtual Environment (Recommended)
 
